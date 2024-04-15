@@ -33,8 +33,6 @@ class Vehiculos(Base):
     tipo = Column(String(250))
     pasajeros = Column(String(250))
     velocidad = Column(String(250), nullable=False)
-    usuario_id = Column(Integer, ForeignKey('usuario.id'))
-    favoritos_id = Column(Integer, ForeignKey('favoritos.id'))
 
 class Planetas(Base):
     __tablename__ = 'planetas'
@@ -44,8 +42,7 @@ class Planetas(Base):
     tipo = Column(String(250))
     pasajeros = Column(String(250))
     velocidad = Column(String(250), nullable=False)
-    usuario_id = Column(Integer, ForeignKey('usuario.id'))
-    favoritos_id = Column(Integer, ForeignKey('favoritos.id'))
+    
 
 class Personajes(Base):
     __tablename__ = 'personajes'
@@ -63,8 +60,12 @@ class Favoritos_personajes(Base):
     id = Column(Integer, primary_key=True)
     personajes_id = Column(Integer, ForeignKey('personajes.id'))
     usuario_id = Column(Integer, ForeignKey('usuario.id'))
+    planetas_id = Column(Integer, ForeignKey('planetas.id'))
+    vehiculos_id = Column(Integer, ForeignKey("vehiculos"))
     personajes = relationship(Personajes)
     usuario = relationship(Usuario)
+    planetas = relationship(Planetas)
+    vehiculos = relationship(Vehiculos)
 
 
     
