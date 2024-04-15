@@ -40,8 +40,8 @@ class Planetas(Base):
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
     tipo = Column(String(250))
-    pasajeros = Column(String(250))
-    velocidad = Column(String(250), nullable=False)
+    clima = Column(String(250))
+    gravedad = Column(String(250), nullable=False)
     
 
 class Personajes(Base):
