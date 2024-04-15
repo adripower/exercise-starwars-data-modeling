@@ -2,6 +2,14 @@
 # StarWars blog database
 <!--endhide-->
 
+
+**importante**esta el diagrama como un imagen en la carpeta raiz
+
+
+
+
+
+
 **Importante**: Para realizar esta actividad necesitas hacer un `fork` de [este repo](https://github.com/breatheco-de/exercise-starwars-data-modeling) en tu cuenta de **Github** y luego, abre el *fork* en Codespaces (recomendado) o Gitpod.
 
 Dentro del archivo `src/models.py` encontrarás un par de clases que describen una base de datos de ejemplo.
