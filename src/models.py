@@ -15,8 +15,8 @@ class Usuario(Base):
     nombre = Column(String(250), nullable=False)
     apellido = Column(String(250), nullable=False)
     email = Column(String(250), nullable=False)
-    personajes_favoritos = relationship("Favoritos_personajes")
-    personajes_favoritos_id = Column(Integer, ForeignKey("Favoritos_personajes.id"))
+    favoritos = relationship("Favoritos")
+   
 
 
     
@@ -55,8 +55,8 @@ class Personajes(Base):
 
 
 
-class Favoritos_personajes(Base):
-    __tablename__ = 'Favoritos_personajes'
+class Favoritos(Base):
+    __tablename__ = 'Favoritos'
     id = Column(Integer, primary_key=True)
     personajes_id = Column(Integer, ForeignKey('personajes.id'))
     usuario_id = Column(Integer, ForeignKey('usuario.id'))
